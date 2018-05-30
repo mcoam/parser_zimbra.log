@@ -11,7 +11,7 @@ my $nr_recipient;
 my $mail_id_status;
 
 
-open(FILE, "/var/log/zimbra.log") or die "Couldn't open mail.log: $!; aborting";
+open(FILE, "zimbra.log") or die "Couldn't open mail.log: $!; aborting";
 while (<FILE>) {
 if ($_ =~ /(\S+ .* \d+:\d+:\d+) .* postfix\/smtpd\[.*\]: (\S+): client=.*\[(\d+\.\d+\.\d+\.\d+)\]$/) {
 $message_time = $1;
